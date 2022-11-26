@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+  <title>PiP</title>
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+      <div class="header-title">@pipinstall</div>
+      <div class="header-burger" onclick="showMobileHistory()">
+        <b></b>
+        <b></b>
+        <b></b>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-page-wrapper">
+    <section class="main-section">
+      <div class="main-section__select" onmousedown="openDropdown(event)">
+        <select name="languages" id="languages" required>
+          <option value="" disabled selected>Язык генерации</option>
+          <option value="py">Python</option>
+          <option value="java">Java</option>
+          <option value="js">JavaScript</option>
+          <option value="c">C</option>
+          <option value="csharp">C#</option>
+          <option value="cpp">C++</option>
+        </select>
+      </div>
+
+      <div class="main-section__inputs sentences-input">
+        <textarea name="sentences" class="main-section__inputs-sentences" placeholder="Введите текст..." maxlength="250" ></textarea>
+        
+        <div class="tooltip hoverable">
+          <i class="icon tooltip-icon">question_mark</i>
+          <div class="tooltip-text mobile">
+            Введите название функции / параметров функции / задачи на английском языке
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-sentences">
+        <button>Сгенерировать</button>
+      </div>
+
+      <div class="main-section__inputs code-output">
+        <textarea name="code" class="main-section__inputs-code" placeholder="Тут будет сгенерированный код :)" readonly></textarea>
+        
+        <div class="tooltip" id="clickable">
+          <i class="icon tooltip-icon">file_copy</i>
+          <div class="tooltip-text copy-tooltip">
+            Скопировано
+          </div>
+        </div>
+      </div>
+
+      <div class="main-section__download">
+        <div class="main-section__select reversed" onmousedown="openDropdown(event)">
+          <select name="formates" id="formates" required>
+            <option value="" disabled selected>Формат файла</option>
+            <option value="py">.py</option>
+            <option value="java">.txt</option>
+          </select>
+        </div>
+        
+        <div class="download-button">
+          <button class="download-code">Скачать</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="history-section">
+      <div class="history-section__wrapper">
+        <div class="history-section__top-line" onclick="hideMobileHistory()"></div>
+        <div class="history-section__header">
+          <div class="history-section__header-main">
+            <img src="static/images/goloveshki.jpg" alt="" class="history-section__header-logo">
+            <h2 class="history-section__header-title">@pipinstall</h2>
+          </div>
+          <div class="history-section__header-switcher">prekol</div>
+        </div>
+
+        <div class="history-section__search">
+          <i class="icon">search</i>
+          <input type="text" class="history-section__search-input" placeholder="ПОИСК ПО ИСТОРИИ ГЕНЕРАЦИИ">
+        </div>
+
+        <div class="scroll-wrapper">
+          <div class="history-section__history">
+            <div class="history-section__history-time">10:56</div>
+            <div class="history-section__history-head">
+              <div class="history-section__history-head-content">
+                <div class="history-section__history-head-title">write a python program to add two numbers</div>
+                <i class="icon history-section__history-icon">delete</i>
+              </div>
+            </div>
+            <div class="history-section__history-body">
+              <pre class="history-section__history-body-text">
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+              </pre>
+              <i class="icon history-section__history-icon">file_copy</i>
+            </div>
+          </div>
+  
+          <div class="history-section__history">
+            <div class="history-section__history-time">08:45</div>
+            <div class="history-section__history-head">
+              <div class="history-section__history-head-content">
+                <div class="history-section__history-head-title">write a python program to add two numbers</div>
+                <i class="icon history-section__history-icon">delete</i>
+              </div>
+            </div>
+            <div class="history-section__history-body">
+              <pre class="history-section__history-body-text">
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+              </pre>
+              <i class="icon history-section__history-icon">file_copy</i>
+            </div>
+          </div>
+  
+          <div class="history-section__history">
+            <div class="history-section__history-time">08:45</div>
+            <div class="history-section__history-head">
+              <div class="history-section__history-head-content">
+                <div class="history-section__history-head-title">write a python program to add two numbers</div>
+                <i class="icon history-section__history-icon">delete</i>
+              </div>
+            </div>
+            <div class="history-section__history-body">
+              <pre class="history-section__history-body-text">
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+              </pre>
+              <i class="icon history-section__history-icon">file_copy</i>
+            </div>
+          </div>
+  
+          <div class="history-section__history">
+            <div class="history-section__history-time">10:56</div>
+            <div class="history-section__history-head">
+              <div class="history-section__history-head-content">
+                <div class="history-section__history-head-title">write a python program to add two numbers</div>
+                <i class="icon history-section__history-icon">delete</i>
+              </div>
+            </div>
+            <div class="history-section__history-body">
+              <pre class="history-section__history-body-text">
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+              </pre>
+              <i class="icon history-section__history-icon">file_copy</i>
+            </div>
+          </div>
+          
+          <div class="history-section__history">
+            <div class="history-section__history-time">10:56</div>
+            <div class="history-section__history-head">
+              <div class="history-section__history-head-content">
+                <div class="history-section__history-head-title">write a python program to add two numbers</div>
+                <i class="icon history-section__history-icon">delete</i>
+              </div>
+            </div>
+            <div class="history-section__history-body">
+              <pre class="history-section__history-body-text">
+num1 = 1.5
+num2 = 6.3
+sum = num1 + num2
+print(f'Sum: {sum}')
+              </pre>
+              <i class="icon history-section__history-icon">file_copy</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bg-filter" onclick="hideMobileHistory()"></div>
+  </main>
+</body>
+</html>
